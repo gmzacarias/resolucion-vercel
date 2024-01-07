@@ -3,9 +3,8 @@ import methods from 'micro-method-router'
 
 export default methods({
     async get(req: NextApiRequest, res: NextApiResponse) {
-        res.send("soy la data")
-    },
-    async patch(req: NextApiRequest, res: NextApiResponse) {
-        res.send("datos actualizados")
+       const query=req.query
+       const queryString = JSON.stringify(query.q);
+        res.send("soy la query= " + queryString)
     },
 })
